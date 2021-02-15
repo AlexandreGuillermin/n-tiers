@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="bs-docs-section" clearfix>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Ajout d'une mobilité</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="" method="post" class="form-example" #userForm="ngForm"
+                    (ngSubmit)="onFormSubmit(userForm)">
+                    <div class="form-example">
+                        <label for="name">Prénom</label><br>
+                        <input type="text" ngModel name="ppnom" id="ppnom" required>
+                    </div>
+                    <div class="form-example">
+                        <label for="name">Nom</label><br>
+                        <input type="text" ngModel name="nom" id="nom" required>
+                    </div>
+                    <div class="form-example">
+                        <label for="name">Ville</label><br>
+                        <input type="text" ngModel name="ville" id="ville" required>
+                    </div>
+                    <div class="form-example">
+                        <label for="name">Pays</label><br>
+                        <input type="text" ngModel name="pays" id="pays" required>
+                    </div>
+                    <div class="form-example">
+                        <label for="name">Promotion</label><br>
+                        <input type="text" ngModel name="promotion" id="promotion" required>
+                    </div>
+                    <div class="form-example">
+                        <label for="name">Début</label><br>
+                        <input type="date" ngModel name="date_debut" id="date_debut" required>
+                    </div>
+                    <div class="form-example">
+                        <label for="name">Fin</label><br>
+                        <input type="date" ngModel name="date_fin" id="date_fin" required>
+                    </div>
+                    <div class="form-example">
+                        <input type="submit" value="Envoyer">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

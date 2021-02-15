@@ -1,0 +1,5 @@
+<div class="container">
+  <app-liste-mobility [mobilities]="mobilities" (modificationEvent)="modificationEventHander($event)" (rechercheEvent)="rechercheEventHander($event)" *ngIf="isListeMobilityDisplay"></app-liste-mobility>
+  <app-modification [mobilityToChange]="mobilityToChange" (finModificationEvent)="finModificationEventHander($event)" *ngIf="isModificationDisplay == true"></app-modification>
+  <app-recherche (modificationEvent)="modificationEventHander($event)" *ngIf="isRechercheDisplay == true"></app-recherche>
+</div>

@@ -1,0 +1,37 @@
+<div class="bs-docs-section" clearfix>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Liste des mobilités</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a (click)="onClickRecherche()"><button type="button"
+                    class="btn btn-primary btn-sm float-right">Rechercher</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Periode</th>
+                    <th scope="col">Prénom Nom</th>
+                    <th scope="col">Promotion</th>
+                    <th scope="col">Localité</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mobility of mobilities; let index = index; let odd = odd; let even = even;"
+                    [ngClass]="{ 'table-secondary' : odd, '': even }">
+                    <th scope="row">Du {{mobility.date_debut}} au {{mobility.date_fin}}</th>
+                    <td>{{mobility.ppnom}} {{mobility.nom}}</td>
+                    <td>{{mobility.promotion}}</td>
+                    <td>{{mobility.ville}}, {{mobility.pays}}</td>
+                    <img class="form-inline my-2 my-lg-0 button" src="assets/modify.png" (click)="onClickModify(mobility)">
+                    <img class="form-inline my-2 my-lg-0 button" src="assets/delete.png" (click)="onClickDelete(mobility)">
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

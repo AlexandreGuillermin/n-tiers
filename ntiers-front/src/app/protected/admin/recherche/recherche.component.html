@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="bs-docs-section" clearfix>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Recherche de mobilité</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="" method="post" class="form-example">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-example">
+                                <label for="name">Début</label><br>
+                                <input type="date" [(ngModel)]="date_debut" name="date_debut" id="date_debut" (ngModelChange)="onNgModelChange()" required>
+                            </div>
+                            <div class="form-example">
+                                <label for="name">Fin</label><br>
+                                <input type="date" [(ngModel)]="date_fin" name="date_fin" id="date_fin" (ngModelChange)="onNgModelChange()" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-example">
+                                <label for="name">Prénom</label><br>
+                                <input type="text" [(ngModel)]="ppnom" name="ppnom" id="ppnom" (ngModelChange)="onNgModelChange()" required>
+                            </div>
+                            <div class="form-example">
+                                <label for="name">Nom</label><br>
+                                <input type="text" [(ngModel)]="nom" name="nom" id="nom" (ngModelChange)="onNgModelChange()" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-example">
+                                <label for="name">Promotion</label><br>
+                                <input type="text" [(ngModel)]="promotion" name="promotion" id="promotion" (ngModelChange)="onNgModelChange()" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-example">
+                                <label for="name">Ville</label><br>
+                                <input type="text" [(ngModel)]="ville" name="ville" id="ville" (ngModelChange)="onNgModelChange()" required>
+                            </div>
+                            <div class="form-example">
+                                <label for="name">Pays</label><br>
+                                <input type="text" [(ngModel)]="pays" name="pays" id="pays" (ngModelChange)="onNgModelChange()" required>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Periode</th>
+                        <th scope="col">Prénom Nom</th>
+                        <th scope="col">Promotion</th>
+                        <th scope="col">Localité</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mobility of mobilities; let odd = odd;let even = even;"
+                        [ngClass]="{ 'table-secondary' : odd, '': even }">
+                        <th scope="row">Du {{mobility.date_debut}} au {{mobility.date_fin}}</th>
+                        <td>{{mobility.ppnom}} {{mobility.nom}}</td>
+                        <td>{{mobility.promotion}}</td>
+                        <td>{{mobility.ville}}, {{mobility.pays}}</td>
+                        <img class="form-inline my-2 my-lg-0 button" src="assets/modify.png" (click)="onClickModify(mobility)">
+                        <img class="form-inline my-2 my-lg-0 button" src="assets/delete.png" (click)="onClickDelete(mobility)">
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
